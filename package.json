@@ -1,0 +1,25 @@
+{
+  "name": "genai-learning",
+  "version": "1.0.0",
+  "description": "https://www.notion.so/Lecture-01-Introduction-to-GenAI-2be43ac5cab98072bbe9ec3fd3b4d8a8\r https://www.notion.so/Lecture-02-Write-our-first-code-2c0a9af81c9880fe854debfe340a9b79",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balram7878/Gen-AI-Learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/balram7878/Gen-AI-Learning/issues"
+  },
+  "homepage": "https://github.com/balram7878/Gen-AI-Learning#readme",
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "dotenv": "^17.2.3"
+  }
+}
