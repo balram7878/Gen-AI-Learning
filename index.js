@@ -2,39 +2,39 @@ import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 dotenv.config();
 
-
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
-const history=[
+const history = [
   {
-    role:"user",
-    parts:[{text:"Hi, how are you?"}]
+    role: "user",
+    parts: [{ text: "how are you?" }],
   },
   {
-    role:"user",
-    parts:[{text:"My name is Balram Meena"}]
+    role: "model",
+    parts: [
+      {
+        text: "I'm doing well, thank you for asking! I'm here and ready to assist you. How are you doing today?",
+      },
+    ],
   },
   {
-    role:"user",
-    parts:[{text:"tell me current date?"}]
-  }
-
+    role: "user",
+    parts: [{ text: "My name is Balram" }],
+  },
+  {
+    role: "user",
+    parts: [{ text: "Do you know my name?" }],
+  },
 ];
 
-async function main() {
+const main = async () => {
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents:history,
+    contents: history,
   });
-  
-
   console.log(response.text);
-  history.push({
-    role:"model",
-    parts:[{text:response.text}]
-  })
-}
+};
 
 main();
