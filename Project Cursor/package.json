@@ -1,0 +1,23 @@
+{
+  "name": "mini-cursor",
+  "version": "1.0.0",
+  "description": "this is the mini-versrion of the cursor",
+  "license": "ISC",
+  "author": "Balram Meena",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balram7878/Gen-AI-Learning.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "child_process": "^1.0.2",
+    "dotenv": "^17.2.3",
+    "readline-sync": "^1.4.10",
+    "util": "^0.12.5"
+  }
+}
