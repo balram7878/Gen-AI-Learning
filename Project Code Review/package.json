@@ -1,0 +1,27 @@
+{
+  "name": "code-review",
+  "version": "1.0.0",
+  "description": "We're building an AI-powered Code Review Agent",
+  "homepage": "https://github.com/balram7878/Gen-AI-Learning#readme",
+  "bugs": {
+    "url": "https://github.com/balram7878/Gen-AI-Learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balram7878/Gen-AI-Learning.git"
+  },
+  "license": "ISC",
+  "author": "Balram Meena",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "dotenv": "^17.2.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "readline-sync": "^1.4.10"
+  }
+}

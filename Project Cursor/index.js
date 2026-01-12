@@ -8,7 +8,7 @@ import os from "os";
 
 const execute = util.promisify(exec);
 const platform = os.platform();
-const ai = new GoogleGenAI({});
+const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
 
 const history = [];
 
@@ -207,7 +207,6 @@ translates intent into executable system actions.
         ],
       });
     } else {
-      console.log(response.text);
       history.push({
         role: "model",
         parts: [{ text: response.text }],
