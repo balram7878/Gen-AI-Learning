@@ -1,25 +1,24 @@
 import { Pinecone } from "@pinecone-database/pinecone";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const pc = new Pinecone({
   apiKey: process.env.PINECONE_API_KEY,
 });
 
-await pc.createIndex({
-  name: "rag-index",
-  dimension: 768, 
-  metric: "cosine",
-  spec: {
-    serverless: {
-      cloud: "aws",
-      region: "us-east-1",
-    },
-  },
-});
+const index = pc.index("rag-systems");
 
-const index = pc.index("rag-index");
+async function storeInPinecone(batch) {
+  if (!batch || batch.length === 0) {
+    console.error(" No records to upsert");
+    return;
+  }
 
-async function storeInPinecone(data) {
-  await index.upsert(data);
+  console.log(`Upserting ${batch.length} vectors...`);
+  await index.upsert({ records: batch });
+
+  console.log(` Upserted ${batch.length} vectors`);
 }
 
 export { storeInPinecone };
