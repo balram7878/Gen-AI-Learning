@@ -21,4 +21,28 @@ async function storeInPinecone(batch) {
   console.log(` Upserted ${batch.length} vectors`);
 }
 
-export { storeInPinecone };
+async function searchPinecone(queryVector, topK = 5) {
+  try {
+    const results = await index.query({
+      vector: queryVector,
+      topK: topK, 
+      includeMetadata: true, 
+    });
+
+    console.log(`Found ${results.matches.length} matches`);
+
+    // Extract just the text from each match
+    const chunks = results.matches.map((match) => ({
+      text: match.metadata.text,
+      score: match.score, 
+      page: match.metadata.page,
+    }));
+
+    return chunks;
+  } catch (error) {
+    console.error("Error searching Pinecone:", error.message);
+    throw error;
+  }
+}
+
+export { storeInPinecone, searchPinecone };
