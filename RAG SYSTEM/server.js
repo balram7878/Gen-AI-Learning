@@ -1,7 +1,6 @@
 import express from "express";
 import { pipeline } from "@xenova/transformers";
 import { searchPinecone } from "./config/pinecone.js";
-import ollama from "ollama";
 import Groq from "groq-sdk";
 
 let embedder;
