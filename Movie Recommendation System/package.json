@@ -18,7 +18,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "node initializeConnections.js"
+    "test": "node index.js"
   },
   "dependencies": {
     "@pinecone-database/pinecone": "^7.2.0",
