@@ -1,0 +1,28 @@
+{
+  "name": "movie-recommendation-system",
+  "version": "1.0.0",
+  "description": "this project is movie recommedations project, build to learn Graph DB and Vector DB",
+  "keywords": [
+    "none"
+  ],
+  "homepage": "https://github.com/balram7878/Gen-AI-Learning#readme",
+  "bugs": {
+    "url": "https://github.com/balram7878/Gen-AI-Learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balram7878/Gen-AI-Learning.git"
+  },
+  "license": "ISC",
+  "author": "Balram Meena",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node initializeConnections.js"
+  },
+  "dependencies": {
+    "@pinecone-database/pinecone": "^7.2.0",
+    "dotenv": "^17.4.2",
+    "neo4j-driver": "^6.0.1"
+  }
+}
